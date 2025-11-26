@@ -1,0 +1,158 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(120deg, #f9f9f9, #e9f5ee);
+  margin: 0;
+  color: #333;
+}
+
+.nutrimeal-container {
+  max-width: 1200px;
+  margin: 30px auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.app-header {
+  background: #4caf50;
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  gap: 20px;
+}
+
+.available-foods,
+.my-meal {
+  flex: 1 1 45%;
+  background: #f8fdf9;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.05);
+}
+
+.food-card {
+  background: #fff;
+  border: 1px solid #e3e3e3;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.food-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.food-info h3 {
+  margin: 0;
+}
+
+.food-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.food-actions input {
+  width: 120px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.food-actions button {
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.food-actions button:hover {
+  background: #3d8e41;
+}
+
+.meal-list {
+  list-style: none;
+  padding: 0;
+}
+
+.meal-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px 15px;
+  margin-bottom: 8px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+}
+
+.meal-item button {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.totals {
+  background: #e8f5e9;
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.meal-balance {
+  text-align: center;
+  margin-top: 10px;
+  font-weight: bold;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.meal-balance.balanced {
+  background: #c8e6c9;
+  color: #2e7d32;
+}
+
+.meal-balance.unbalanced {
+  background: #ffcdd2;
+  color: #c62828;
+}
+
+.toast {
+  background: #323232;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 15px;
+  animation: fade 3s ease forwards;
+}
+
+@keyframes fade {
+  0% { opacity: 0; transform: translateY(10px); }
+  10%, 90% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-10px); }
+}
+
+@media (max-width: 768px) {
+  .content-wrapper {
+    flex-direction: column;
+  }
+
+  .available-foods, .my-meal {
+    flex: 1 1 100%;
+  }
+}
