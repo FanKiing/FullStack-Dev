@@ -1,104 +1,179 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { setFilterGroupe, decrementNoteDiscipline } from "../store/stagiaireSlice";
-import { addAbsence, setFilterGroupeAbs } from "../store/absenceSlice";
-import { distinctGroups } from "../utils/groups";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  setFilterGroupe,
+  decrementNoteDiscipline,
+} from "../redux/stagiaireSlice";
+import { addAbsence, setFilterGroupeAbs } from "../redux/absenceSlice";
+import { distinctGroups } from "../utils/distinctGroups";
 
 export default function Stagiaires() {
   const dispatch = useDispatch();
+
   const stagiaires = useSelector((state) => state.stagiaires.list);
   const filter = useSelector((state) => state.stagiaires.filterGroupe);
   const absences = useSelector((state) => state.absences.list);
 
-  const [checked, setChecked] = React.useState({});
+  const [checkedState, setCheckedState] = React.useState({});
 
-  const groupes = React.useMemo(() => distinctGroups(stagiaires), [stagiaires]);
+  const groupes = React.useMemo(
+    () => distinctGroups(stagiaires),
+    [stagiaires]
+  );
 
-  const onSelectGroup = (e) => {
-    dispatch(setFilterGroupe(e.target.value));
-    dispatch(setFilterGroupeAbs(e.target.value));
-  };
-
-  const filtered = React.useMemo(() => {
-    return filter === "ALL"
-      ? stagiaires
-      : stagiaires.filter((s) => s.groupe === filter);
+  const filteredStagiaires = React.useMemo(() => {
+    if (filter === "ALL") return stagiaires;
+    return stagiaires.filter((s) => s.groupe === filter);
   }, [stagiaires, filter]);
 
-  const toggle = (cef) => {
-    setChecked((prev) => ({ ...prev, [cef]: !prev[cef] }));
+  const onSelectGroup = (e) => {
+    const value = e.target.value;
+    dispatch(setFilterGroupe(value));
+    dispatch(setFilterGroupeAbs(value));
   };
 
-  const handleSaveAbsence = (s) => {
-    if (!checked[s.cef]) return;
+  const onToggleCheckbox = (cef) => {
+    setCheckedState((prev) => ({
+      ...prev,
+      [cef]: !prev[cef],
+    }));
+  };
+
+  const handleSaveAbsence = (cef, grp) => {
+    if (!checkedState[cef]) return;
 
     const today = new Date().toISOString().slice(0, 10);
 
-    dispatch(addAbsence({ cef: s.cef, groupe: s.groupe, date: today }));
-    dispatch(decrementNoteDiscipline({ cef: s.cef }));
+    dispatch(
+      addAbsence({
+        cef,
+        groupe: grp,
+        date: today,
+      })
+    );
 
-    setChecked((prev) => ({ ...prev, [s.cef]: false }));
+    dispatch(decrementNoteDiscipline(cef));
+
+    setCheckedState((prev) => ({
+      ...prev,
+      [cef]: false,
+    }));
   };
 
-  return (
-    <div className="container">
-      <h2>Liste des stagiaires</h2>
+  const recentAbs = absences.slice().reverse().slice(0, 5);
 
-      <div className="mb-3 row">
-        <label className="col-sm-2 col-form-label">Filtrer par groupe</label>
-        <div className="col-sm-4">
-          <select className="form-select" value={filter} onChange={onSelectGroup}>
-            <option value="ALL">Tous</option>
-            {groupes.map((g) => (
-              <option key={g} value={g}>{g}</option>
-            ))}
-          </select>
+  return (
+    <div className="container page">
+      {/* PAGE HEADER */}
+      <div className="page-header">
+        <div>
+          <h2 className="page-title">Stagiaires</h2>
+          <p className="page-subtitle">
+            Liste filtrable des stagiaires avec note de discipline en temps réel.
+          </p>
+        </div>
+        <div className="page-meta">
+          <div>Total : {stagiaires.length} stagiaires</div>
         </div>
       </div>
 
-      <table className="table table-striped">
-        <thead>
-          <tr>
-            <th>CEF</th>
-            <th>Nom</th>
-            <th>Prénom</th>
-            <th>Groupe</th>
-            <th>Note Disc.</th>
-            <th>Absence?</th>
-            <th>Action</th>
-          </tr>
-        </thead>
+      {/* CARD */}
+      <div className="card-elevated">
 
-        <tbody>
-          {filtered.map((s) => (
-            <tr key={s.cef}>
-              <td>{s.cef}</td>
-              <td>{s.nom}</td>
-              <td>{s.prenom}</td>
-              <td>{s.groupe}</td>
-              <td>{s.noteDiscipline}</td>
-              <td>
-                <input type="checkbox" checked={!!checked[s.cef]} onChange={() => toggle(s.cef)} />
-              </td>
-              <td>
-                <button className="btn btn-sm btn-success" onClick={() => handleSaveAbsence(s)}>Save</button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+        {/* FILTER BAR */}
+        <div className="filter-bar">
+          <div style={{ flex: 1 }}>
+            <label>Filtrer par groupe</label>
+            <select
+              className="form-select"
+              value={filter}
+              onChange={onSelectGroup}
+            >
+              <option value="ALL">Tous</option>
+              {groupes.map((grp) => (
+                <option key={grp} value={grp}>
+                  {grp}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
 
-      <div className="mt-3">
-        <h5>Absences récentes</h5>
-        <ul>
-          {absences
-            .slice()
-            .reverse()
-            .slice(0, 5)
-            .map((a) => (
-              <li key={a.id}>{a.date} — {a.cef} ({a.groupe})</li>
+        {/* TABLE */}
+        <div className="table-wrapper">
+          <table className="table table-striped">
+            <thead>
+              <tr>
+                <th>CEF</th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Groupe</th>
+                <th>Note discipline</th>
+                <th>Absent ?</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {filteredStagiaires.map((s) => (
+                <tr key={s.cef}>
+                  <td>{s.cef}</td>
+                  <td>{s.nom}</td>
+                  <td>{s.prenom}</td>
+                  <td>
+                    <span className="badge-pill badge-groupe">{s.groupe}</span>
+                  </td>
+
+                  <td>
+                    {s.noteDiscipline >= 10 ? (
+                      <span className="badge-pill badge-note-high">
+                        {s.noteDiscipline}/20
+                      </span>
+                    ) : (
+                      <span className="badge-pill badge-note-low">
+                        {s.noteDiscipline}/20
+                      </span>
+                    )}
+                  </td>
+
+                  <td>
+                    <input
+                      type="checkbox"
+                      checked={!!checkedState[s.cef]}
+                      onChange={() => onToggleCheckbox(s.cef)}
+                    />
+                  </td>
+
+                  <td>
+                    <button
+                      className="btn btn-success"
+                      onClick={() => handleSaveAbsence(s.cef, s.groupe)}
+                    >
+                      <span className="btn-icon"></span>
+                      Enregistrer
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        {/* RECENT ABSENCES */}
+        <div className="recent-box">
+          <div className="recent-title">Absences récentes</div>
+          <ul className="recent-list">
+            {recentAbs.map((a) => (
+              <li key={a.id}>
+                <span className="date">{a.date}</span>
+                <span>
+                  {a.cef} — {a.groupe}
+                </span>
+              </li>
             ))}
-        </ul>
+          </ul>
+        </div>
+
       </div>
     </div>
   );

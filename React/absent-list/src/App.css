@@ -1,0 +1,352 @@
+/* ====== Base layout ====== */
+:root {
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --primary-soft: #dbeafe;
+  --bg: #f3f4f6;
+  --card-bg: #ffffff;
+  --border-subtle: #e5e7eb;
+  --text-main: #111827;
+  --text-muted: #6b7280;
+  --danger: #ef4444;
+  --success: #16a34a;
+  --shadow-soft: 0 10px 25px rgba(15, 23, 42, 0.06);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: var(--bg);
+  color: var(--text-main);
+}
+
+/* Wrap everything under navbar */
+.app-shell {
+  min-height: 100vh;
+  background: radial-gradient(circle at top left, #e5f0ff 0, #f3f4f6 40%);
+}
+
+/* ====== Navbar tweaks ====== */
+
+.navbar {
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.08);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.navbar-brand::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #22c55e;
+  box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.25);
+}
+
+.nav-link {
+  font-weight: 500;
+  color: #e5e7eb !important;
+  opacity: 0.8;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.nav-link:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.nav-link.active {
+  opacity: 1;
+  border-bottom: 2px solid #bfdbfe;
+}
+
+/* ====== Page structure ====== */
+
+.page {
+  padding: 2rem 0 3rem;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.page-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  margin: 0;
+}
+
+.page-subtitle {
+  margin: 0.25rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+/* Small stats / info on the right of header */
+.page-meta {
+  text-align: right;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* ====== Card container ====== */
+
+.card-elevated {
+  background: var(--card-bg);
+  border-radius: 18px;
+  padding: 1.5rem 1.75rem;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(148, 163, 184, 0.15);
+}
+
+/* ====== Filter bar ====== */
+
+.filter-bar {
+  padding: 0.75rem 1rem;
+  border-radius: 14px;
+  background: #f9fafb;
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: flex-end;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.filter-bar label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.25rem;
+}
+
+.filter-bar select.form-select {
+  border-radius: 999px;
+  font-size: 0.9rem;
+  padding-left: 1rem;
+  padding-right: 2.2rem;
+  border-color: var(--border-subtle);
+}
+
+.filter-bar select.form-select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.4);
+}
+
+/* ====== Tables ====== */
+
+.table-wrapper {
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  background: #ffffff;
+}
+
+.table {
+  margin-bottom: 0;
+}
+
+.table thead {
+  background: linear-gradient(90deg, #eff6ff, #f9fafb);
+}
+
+.table thead th {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  border-bottom-width: 1px;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.table tbody tr {
+  transition: background-color 0.16s ease, transform 0.12s ease;
+}
+
+.table tbody tr:hover {
+  background: #f9fafb;
+  transform: translateY(-1px);
+}
+
+.table tbody td {
+  vertical-align: middle;
+  font-size: 0.91rem;
+}
+
+/* ====== Tags / badges ====== */
+
+.badge-pill {
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.badge-groupe {
+  background: #eef2ff;
+  color: #4f46e5;
+}
+
+.badge-note-high {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.badge-note-low {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+/* ====== Checkbox & buttons ====== */
+
+input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  border: 1px solid #9ca3af;
+  cursor: pointer;
+}
+
+.btn {
+  border-radius: 999px;
+  padding-inline: 1rem;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.btn-success {
+  background: var(--success);
+  border-color: var(--success);
+}
+
+.btn-success:hover {
+  background: #15803d;
+  border-color: #15803d;
+}
+
+.btn-icon {
+  width: 1.15rem;
+  height: 1.15rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.22);
+}
+
+/* ====== Recent absences list ====== */
+
+.recent-box {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--border-subtle);
+}
+
+.recent-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.recent-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.recent-list li {
+  font-size: 0.88rem;
+  padding: 0.3rem 0;
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-muted);
+}
+
+.recent-list li span.date {
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+/* ====== Home page ====== */
+
+.hero {
+  padding: 3rem 0;
+}
+
+.hero-card {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 2rem 2.25rem;
+  border-radius: 24px;
+  background: radial-gradient(circle at top left, #e0f2fe 0, #ffffff 35%);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.hero-title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+}
+
+.hero-subtitle {
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-pills {
+  display: inline-flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hero-pill {
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+  background: rgba(37, 99, 235, 0.06);
+  color: var(--primary-dark);
+  font-size: 0.82rem;
+}
+
+/* ====== Responsive tweaks ====== */
+
+@media (max-width: 768px) {
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .page-meta {
+    text-align: left;
+  }
+
+  .filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
