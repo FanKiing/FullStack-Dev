@@ -1,0 +1,38 @@
+body {
+  background: #fafafa;
+}
+
+.card-img-top {
+  height: 260px;
+  object-fit: cover;
+}
+
+.book-title {
+  font-weight: 600;
+}
+
+.navbar-brand {
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.rating-stars span {
+  font-size: 1.3rem;
+}
+
+.btn-primary {
+  background: #1f6feb;
+  border: none;
+}
+
+.btn-primary:hover {
+  background: #154fa3;
+}
+
+.badge-category {
+  background: #6f42c1;
+}
+
+.book-desc {
+  color: #555;
+}
