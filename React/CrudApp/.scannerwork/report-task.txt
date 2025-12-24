@@ -1,0 +1,6 @@
+projectKey=crudapp
+serverUrl=http://localhost:9001
+serverVersion=9.9.8.100196
+dashboardUrl=http://localhost:9001/dashboard?id=crudapp
+ceTaskId=AZtPw5yfJ7B0gx7oXFxU
+ceTaskUrl=http://localhost:9001/api/ce/task?id=AZtPw5yfJ7B0gx7oXFxU
