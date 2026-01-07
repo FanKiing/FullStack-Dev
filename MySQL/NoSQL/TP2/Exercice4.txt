@@ -1,0 +1,110 @@
+  {
+    codeVoyage: "V001",
+    client: { cin: "AA123", nom: "El Fassi", prenom: "Yassine" },
+    destination: { pays: "France", ville: "Paris" },
+    dateDepart: "2025-06-10",
+    dateRetour: "2025-06-17",
+    prix: 12000,
+    nbVoyageurs: 2,
+    statut: "Confirme",
+    assurance: true
+  },
+  {
+    codeVoyage: "V002",
+    client: { cin: "BB234", nom: "Alaoui", prenom: "Salma" },
+    destination: { pays: "Espagne", ville: "Madrid" },
+    dateDepart: "2025-07-05",
+    dateRetour: "2025-07-12",
+    prix: 9000,
+    nbVoyageurs: 1,
+    statut: "En attente",
+    assurance: false
+  },
+  {
+    codeVoyage: "V003",
+    client: { cin: "CC345", nom: "Bennani", prenom: "Hicham" },
+    destination: { pays: "Italie", ville: "Rome" },
+    dateDepart: "2025-08-01",
+    dateRetour: "2025-08-08",
+    prix: 11000,
+    nbVoyageurs: 3,
+    statut: "Confirme",
+    assurance: true
+  },
+  {
+    codeVoyage: "V004",
+    client: { cin: "DD456", nom: "Zahraoui", prenom: "Imane" },
+    destination: { pays: "Turquie", ville: "Istanbul" },
+    dateDepart: "2025-09-10",
+    dateRetour: "2025-09-18",
+    prix: 10000,
+    nbVoyageurs: 2,
+    statut: "Annule",
+    assurance: false
+  },
+  {
+    codeVoyage: "V005",
+    client: { cin: "EE567", nom: "Tazi", prenom: "Omar" },
+    destination: { pays: "Maroc", ville: "Marrakech" },
+    dateDepart: "2025-05-20",
+    dateRetour: "2025-05-25",
+    prix: 4500,
+    nbVoyageurs: 4,
+    statut: "Confirme",
+    assurance: true
+  },
+  {
+    codeVoyage: "V006",
+    client: { cin: "FF678", nom: "Idrissi", prenom: "Nour" },
+    destination: { pays: "Portugal", ville: "Lisbonne" },
+    dateDepart: "2025-06-15",
+    dateRetour: "2025-06-22",
+    prix: 8500,
+    nbVoyageurs: 2,
+    statut: "Confirme",
+    assurance: false
+  },
+  {
+    codeVoyage: "V007",
+    client: { cin: "GG789", nom: "Chafik", prenom: "Rachid" },
+    destination: { pays: "France", ville: "Nice" },
+    dateDepart: "2025-07-18",
+    dateRetour: "2025-07-25",
+    prix: 13000,
+    nbVoyageurs: 1,
+    statut: "En attente",
+    assurance: true
+  },
+  {
+    codeVoyage: "V008",
+    client: { cin: "HH890", nom: "El Khatib", prenom: "Aya" },
+    destination: { pays: "Emirats", ville: "Dubai" },
+    dateDepart: "2025-10-02",
+    dateRetour: "2025-10-10",
+    prix: 18000,
+    nbVoyageurs: 2,
+    statut: "Confirme",
+    assurance: true
+  },
+  {
+    codeVoyage: "V009",
+    client: { cin: "II901", nom: "Mansouri", prenom: "Kamal" },
+    destination: { pays: "Egypte", ville: "Le Caire" },
+    dateDepart: "2025-11-05",
+    dateRetour: "2025-11-12",
+    prix: 9500,
+    nbVoyageurs: 2,
+    statut: "Annule",
+    assurance: false
+  },
+  {
+    codeVoyage: "V010",
+    client: { cin: "JJ012", nom: "Ouazzani", prenom: "Sara" },
+    destination: { pays: "Espagne", ville: "Barcelone" },
+    dateDepart: "2025-06-25",
+    dateRetour: "2025-07-02",
+    prix: 10500,
+    nbVoyageurs: 3,
+    statut: "Confirme",
+    assurance: true
+  }

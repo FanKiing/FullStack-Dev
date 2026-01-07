@@ -1,0 +1,201 @@
+{
+    _id: "LIV-A1B2C3",
+    client: {
+      clientId: "CL001",
+      nom: "Yassine El Fassi",
+      adresse: { ville: "Rabat", codePostal: "10000" }
+    },
+    livreur: { livreurId: "LV001", nom: "Omar Tazi" },
+    dateLivraison: ISODate("2024-12-01"),
+    statut: "En cours",
+    colis: [
+      { colisId: "C001", description: "Ordinateur portable", poids: 3.2, valeur: 9000 },
+      { colisId: "C002", description: "Souris + Clavier", poids: 1.1, valeur: 450 }
+    ],
+    totalPoids: 4.3,
+    totalValeur: 9450
+  },
+  {
+    _id: "LIV-D4E5F6",
+    client: {
+      clientId: "CL002",
+      nom: "Salma Alaoui",
+      adresse: { ville: "Casablanca", codePostal: "20000" }
+    },
+    livreur: { livreurId: "LV002", nom: "Imane Zahraoui" },
+    dateLivraison: ISODate("2024-12-01"),
+    statut: "Livrée",
+    colis: [
+      { colisId: "C003", description: "Télévision 55 pouces", poids: 18.0, valeur: 6500 }
+    ],
+    totalPoids: 18.0,
+    totalValeur: 6500
+  },
+  {
+    _id: "LIV-G7H8I9",
+    client: {
+      clientId: "CL003",
+      nom: "Hicham Bennani",
+      adresse: { ville: "Tanger", codePostal: "90000" }
+    },
+    livreur: { livreurId: "LV003", nom: "Nour Idrissi" },
+    dateLivraison: ISODate("2024-11-15"),
+    statut: "Annulée",
+    colis: [
+      { colisId: "C004", description: "Imprimante", poids: 8.5, valeur: 2200 },
+      { colisId: "C005", description: "Cartouches", poids: 2.0, valeur: 600 }
+    ],
+    totalPoids: 10.5,
+    totalValeur: 2800
+  },
+  {
+    _id: "LIV-J1K2L3",
+    client: {
+      clientId: "CL004",
+      nom: "Aya El Khatib",
+      adresse: { ville: "Marrakech", codePostal: "40000" }
+    },
+    livreur: { livreurId: "LV001", nom: "Omar Tazi" },
+    dateLivraison: ISODate("2024-11-20"),
+    statut: "En cours",
+    colis: [
+      { colisId: "C006", description: "Réfrigérateur", poids: 55.0, valeur: 7800 }
+    ],
+    totalPoids: 55.0,
+    totalValeur: 7800
+  },
+  {
+    _id: "LIV-M4N5O6",
+    client: {
+      clientId: "CL005",
+      nom: "Sara Ouazzani",
+      adresse: { ville: "Agadir", codePostal: "80000" }
+    },
+    livreur: { livreurId: "LV004", nom: "Rachid Chafik" },
+    dateLivraison: ISODate("2024-11-05"),
+    statut: "Livrée",
+    colis: [
+      { colisId: "C007", description: "Smartphone", poids: 0.4, valeur: 3200 },
+      { colisId: "C008", description: "Écouteurs", poids: 0.2, valeur: 300 },
+      { colisId: "C009", description: "Power bank", poids: 0.5, valeur: 250 }
+    ],
+    totalPoids: 1.1,
+    totalValeur: 3750
+  },
+  {
+    _id: "LIV-P7Q8R9",
+    client: {
+      clientId: "CL006",
+      nom: "Kamal Mansouri",
+      adresse: { ville: "Casablanca", codePostal: "20000" }
+    },
+    livreur: { livreurId: "LV002", nom: "Imane Zahraoui" },
+    dateLivraison: ISODate("2024-11-28"),
+    statut: "Annulée",
+    colis: [
+      { colisId: "C010", description: "Console de jeux", poids: 4.0, valeur: 5200 },
+      { colisId: "C011", description: "Manette supplémentaire", poids: 0.5, valeur: 650 }
+    ],
+    totalPoids: 4.5,
+    totalValeur: 5850
+  },
+  {
+    _id: "LIV-S1T2U3",
+    client: {
+      clientId: "CL007",
+      nom: "Meriem Rahmani",
+      adresse: { ville: "Rabat", codePostal: "10100" }
+    },
+    livreur: { livreurId: "LV005", nom: "Hamza Boulahya" },
+    dateLivraison: ISODate("2024-11-10"),
+    statut: "En cours",
+    colis: [
+      { colisId: "C012", description: "Carton vêtements", poids: 12.0, valeur: 900 },
+      { colisId: "C013", description: "Carton chaussures", poids: 6.0, valeur: 700 }
+    ],
+    totalPoids: 18.0,
+    totalValeur: 1600
+  },
+  {
+    _id: "LIV-V4W5X6",
+    client: {
+      clientId: "CL008",
+      nom: "Anass El Bakkali",
+      adresse: { ville: "Tanger", codePostal: "90000" }
+    },
+    livreur: { livreurId: "LV003", nom: "Nour Idrissi" },
+    dateLivraison: ISODate("2024-11-30"),
+    statut: "Livrée",
+    colis: [
+      { colisId: "C014", description: "Machine à laver", poids: 62.0, valeur: 7000 }
+    ],
+    totalPoids: 62.0,
+    totalValeur: 7000
+  },
+  {
+    _id: "LIV-Y7Z8A9",
+    client: {
+      clientId: "CL009",
+      nom: "Imane Ait Lhaj",
+      adresse: { ville: "Fès", codePostal: "30000" }
+    },
+    livreur: { livreurId: "LV004", nom: "Rachid Chafik" },
+    dateLivraison: ISODate("2024-11-18"),
+    statut: "En cours",
+    colis: [
+      { colisId: "C015", description: "PC Gamer", poids: 12.5, valeur: 15000 },
+      { colisId: "C016", description: "Écran 27 pouces", poids: 6.5, valeur: 3200 }
+    ],
+    totalPoids: 19.0,
+    totalValeur: 18200
+  },
+  {
+    _id: "LIV-B0C1D2",
+    client: {
+      clientId: "CL010",
+      nom: "Oumaima El Hani",
+      adresse: { ville: "Casablanca", codePostal: "20250" }
+    },
+    livreur: { livreurId: "LV001", nom: "Omar Tazi" },
+    dateLivraison: ISODate("2024-11-22"),
+    statut: "Annulée",
+    colis: [
+      { colisId: "C017", description: "Livres (lot)", poids: 16.0, valeur: 850 }
+    ],
+    totalPoids: 16.0,
+    totalValeur: 850
+  },
+  {
+    _id: "LIV-E3F4G5",
+    client: {
+      clientId: "CL011",
+      nom: "Siham El Mahdi",
+      adresse: { ville: "Tanger", codePostal: "90010" }
+    },
+    livreur: { livreurId: "LV005", nom: "Hamza Boulahya" },
+    dateLivraison: ISODate("2024-11-03"),
+    statut: "Livrée",
+    colis: [
+      { colisId: "C018", description: "Climatiseur", poids: 21.5, valeur: 5600 },
+      { colisId: "C019", description: "Support mural", poids: 3.0, valeur: 300 }
+    ],
+    totalPoids: 24.5,
+    totalValeur: 5900
+  },
+  {
+    _id: "LIV-H6I7J8",
+    client: {
+      clientId: "CL012",
+      nom: "Jamal Fahmi",
+      adresse: { ville: "Rabat", codePostal: "10020" }
+    },
+    livreur: { livreurId: "LV002", nom: "Imane Zahraoui" },
+    dateLivraison: ISODate("2024-11-29"),
+    statut: "En cours",
+    colis: [
+      { colisId: "C020", description: "Pièces auto (carton)", poids: 25.0, valeur: 1800 },
+      { colisId: "C021", description: "Outils (boîte)", poids: 9.0, valeur: 1200 }
+    ],
+    totalPoids: 34.0,
+    totalValeur: 3000
+  }

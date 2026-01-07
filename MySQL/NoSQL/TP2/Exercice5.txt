@@ -1,0 +1,27 @@
+{
+    codeVente: "V001",
+    produit: "Ordinateur",
+    prixUnitaire: 8000,
+    quantite: 2,
+    remise: 500,
+    assurance: true,
+    fraisLivraison: 200
+  },
+  {
+    codeVente: "V002",
+    produit: "Smartphone",
+    prixUnitaire: 3500,
+    quantite: 3,
+    remise: 0,
+    assurance: false,
+    fraisLivraison: 150
+  },
+  {
+    codeVente: "V003",
+    produit: "Tablette",
+    prixUnitaire: 4200,
+    quantite: 1,
+    remise: 300,
+    assurance: true,
+    fraisLivraison: 100
+  }
