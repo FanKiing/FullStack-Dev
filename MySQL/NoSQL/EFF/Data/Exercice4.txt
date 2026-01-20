@@ -1,0 +1,42 @@
+[
+    {
+        "_id": "s1",
+        "nomsal": "Alami",
+        "prenomsal": "Sara",
+        "fonction": "Technicien",
+        "service": {
+            "codeser": "1",
+            "nomser": "informatique"
+        }
+    },
+    {
+        "_id": "s2",
+        "nomsal": "Bennani",
+        "prenomsal": "Khalid",
+        "fonction": "Technicien",
+        "service": {
+            "codeser": "2",
+            "nomser": "finance"
+        }
+    },
+    {
+        "_id": "s3",
+        "nomsal": "El Aydi",
+        "prenomsal": "Amina",
+        "fonction": "Manager",
+        "service": {
+            "codeser": "1",
+            "nomser": "informatique"
+        }
+    },
+    {
+        "_id": "s4",
+        "nomsal": "Rachid",
+        "prenomsal": "Ali",
+        "fonction": "Technicien",
+        "service": {
+            "codeser": "3",
+            "nomser": "RH"
+        }
+    }
+]

@@ -1,0 +1,33 @@
+[
+  {
+    "NumT": "T1",
+    "Type": "agricole",
+    "Prix": 200000,
+    "Titre_foncier": "TF001",
+    "Cin": "P1",
+    "Adresse": "Route des Fermes, Rabat",
+    "Superficie": 500,
+    "Notaire": {
+      "Numn": "N1",
+      "Nom": "El Amrani",
+      "Prenom": "Hassan",
+      "Adresse": "Rabat",
+      "Tel": "0661234567"
+    }
+  },
+  {
+    "NumT": "T2",
+    "Type": "lotissement",
+    "Prix": 400000,
+    "Titre_foncier": "TF002",
+    "Cin": "P2",
+    "Adresse": "Rabat",
+    "Superficie": 300,
+    "Notaire": {
+      "Numn": "N2",
+      "Nom": "Bouazza",
+      "Prenom": "Ahmed",
+      "Adresse": "Rabat",
+      "Tel": "0662345678"
+    }
+  }]
