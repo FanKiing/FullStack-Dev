@@ -8,11 +8,13 @@ Route::inertia('/', 'welcome', [
     'canRegister' => Features::enabled(Features::registration()),
 ])->name('home');
 
-Route::middleware(['auth', 'verified'])->group(function () {
-    Route::inertia('dashboard', 'dashboard')->name('dashboard');
+
+Route::get('/', function () {
+    return redirect()->route('films.index');
 });
 
 Route::resource('films', FilmController::class);
-Route::get('films/filter', [FilmController::class, 'filter']);
+Route::post('films/filter', [FilmController::class, 'filter'])->name('films.filter');
+Route::delete('films/{film}/actors/{actor}', [FilmController::class, 'detachActor'])->name('films.actors.detach');
 
 require __DIR__.'/settings.php';
