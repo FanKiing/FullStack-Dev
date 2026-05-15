@@ -10,18 +10,19 @@ const {
     deleteEmploye
 } = require("../controllers/employeController");
 
+const authMiddleware = require("../middleware/authMiddleware");
 
-// CRUD Routes
 
-router.post("/", createEmploye);
+// Protected Routes
+router.post("/", authMiddleware, createEmploye);
 
-router.get("/", getEmployes);
+router.get("/", authMiddleware, getEmployes);
 
-router.get("/:id", getEmployeById);
+router.get("/:id", authMiddleware, getEmployeById);
 
-router.put("/:id", updateEmploye);
+router.put("/:id", authMiddleware, updateEmploye);
 
-router.delete("/:id", deleteEmploye);
+router.delete("/:id", authMiddleware, deleteEmploye);
 
 
 module.exports = router;
